@@ -2,32 +2,26 @@ package io.project.Telegrambot.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-import java.sql.Timestamp;
-
-@Getter
-@Setter
 @Entity(name = "usersDataTable")
+@Data
 public class User { //класс с данными юзера, при взаимодействии с ботом
 
     @Id
     private Long chatId;
 
-    private String firstName;
-    private String lastName;
-    private String userName;
-    private Timestamp registeredAt;
+    private String phoneNumber;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "chatId=" + chatId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", userName='" + userName + '\'' +
-                ", registeredAt=" + registeredAt +
-                '}';
-    }
+    private java.sql.Timestamp registeredAt;
+
+    private String firstName;
+
+    private String lastName;
+
+    private String userName;
+
+    private String bio;
+
+    private String description;
 }
